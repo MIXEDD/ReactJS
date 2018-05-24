@@ -1,3 +1,12 @@
-#root {
+.App {
     text-align: center;
 }
+
+.red {
+    color: red;
+}
+
+.bold {
+    font-weight: bold;
+}
+
