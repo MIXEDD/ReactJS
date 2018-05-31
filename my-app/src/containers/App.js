@@ -7,6 +7,9 @@ import WithClass from '../hoc/WithClass';
 import Auxillary from '../hoc/Auxillary';
 import WithClassSecond from '../hoc/WithClassSecond';
 
+
+export const AuthContext = React.createContext(false);
+
 class App extends PureComponent {
 
     constructor(props){
@@ -20,7 +23,8 @@ class App extends PureComponent {
             ],
             otherState: 'some other value',
             showPersons: false,
-            toggleClicked: 0
+            toggleClicked: 0,
+            authenticated: false
         }
 
     }
@@ -36,6 +40,16 @@ class App extends PureComponent {
 
     componentWillUpdate(nextProps, nextState){
         console.log('[Update App.js] Inside componentWillUpdate ', nextProps,nextState);
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        console.log('[Update App.js] Inside getDerivedStateFromProps ', nextProps,prevState);
+        return prevState;
+    }
+
+    getSnapshotBeforeUpdate(){
+        console.log('[Update App.js] Inside getSnapshotBeforeUpdate ');
+
     }
 
     componentDidUpdate() {
@@ -81,6 +95,10 @@ class App extends PureComponent {
 
 
 
+    loginHandler = () => {
+        this.setState({authenticated: true});
+    }
+
 
     render() {
         console.log('[App.js] inside render()')
@@ -94,6 +112,7 @@ class App extends PureComponent {
                         persons={this.state.persons}
                         click={this.deletePersonHandler}
                         changed={this.nameChangedHandler}
+                        isAuthenticated={this.state.authenticated}
                     />
                 </div>
             );
@@ -110,8 +129,9 @@ class App extends PureComponent {
                       showPersons={this.state.showPersons}
                       persons={this.state.persons}
                       click={this.togglePersonsHandler}
+                      login={this.loginHandler}
                   />
-                  {persons}
+                <AuthContext.Provider value={this.state.authenticated}>{persons}</AuthContext.Provider>
             </Auxillary>
     );
   }
