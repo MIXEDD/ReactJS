@@ -1,0 +1,10 @@
+.Canvas{
+    display: flex;
+    justify-content: center;
+}
+
+.Canvas #chart-left-title {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}

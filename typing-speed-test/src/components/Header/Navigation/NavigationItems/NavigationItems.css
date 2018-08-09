@@ -1,0 +1,6 @@
+.NavigationItems {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}

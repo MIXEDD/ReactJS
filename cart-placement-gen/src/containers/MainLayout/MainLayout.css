@@ -1,0 +1,8 @@
+.MainLayout {
+    margin: 0 20px;
+}
+
+.MainLayout #banner{
+    margin-top: 25px;
+    max-width: 25%;
+}

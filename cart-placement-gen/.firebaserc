@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "team-placement-gen",
+    "plytine-gen": "plytine-gen"
+  }
+}

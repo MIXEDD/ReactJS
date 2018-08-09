@@ -1,0 +1,17 @@
+.NewGame {
+    padding: 12px 70px;
+    font-size: 22px;
+    color: white;
+    background-color: #C91F37;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+.NewGame:hover{
+    cursor: pointer;
+    color: #C91F37;
+    background-color: white;
+    border: 1px solid #C91F37;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}

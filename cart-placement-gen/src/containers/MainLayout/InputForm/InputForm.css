@@ -1,0 +1,40 @@
+.InputForm {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 60px;
+    border: 2px solid #ff0000;
+    padding: 45px 10px;
+    margin-bottom: 50px;
+}
+
+.InputForm #people-input-field {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 11px 33px;
+    text-align: center;
+    border: 1px solid #ff0000;
+    box-sizing: border-box;
+    background-color: #1f1a17;
+    caret-color:#ff0000;
+    color: white;
+    width: 280px;
+}
+
+.InputForm #people-input-field::placeholder {
+    font-size: 14px;
+    color: white;
+}
+
+.InputForm #generator {
+    padding: 10px 104px;
+    border: 1px solid #ff0000;
+    box-sizing: border-box;
+    color: white;
+}
+
+.InputForm #generator:hover{
+    cursor: pointer;
+    background-color: #ff0000;
+    transition: all 0.2s;
+}

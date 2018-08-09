@@ -1,0 +1,52 @@
+.ResultsTable-screen {
+    margin: auto;
+    border: 2px solid #ff0000;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.ResultsTable-screen thead tr th ,.ResultsTable-screen tbody tr td {
+    padding: 10px 66px;
+}
+
+.ResultsTable-screen thead tr th{
+    border-bottom: 2px solid #ff0000;
+}
+
+.ResultsTable-screen thead tr th:first-of-type,.ResultsTable-screen tbody tr td:first-of-type{
+    border-right: 2px solid #ff0000;
+}
+
+
+.ResultsTable-screen tbody tr td{
+    border-bottom: 1px solid #ff0000;
+}
+
+
+.ResultsTable-pdf {
+    margin: auto;
+    border: 2px solid black;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.ResultsTable-pdf table {
+    margin-top: 50px;
+}
+
+.ResultsTable-pdf thead tr th ,.ResultsTable-pdf tbody tr td {
+    padding: 10px 66px;
+}
+
+.ResultsTable-pdf thead tr th{
+    border-bottom: 2px solid black;
+}
+
+.ResultsTable-pdf thead tr th:first-of-type,.ResultsTable-pdf tbody tr td:first-of-type{
+    border-right: 2px solid black;
+}
+
+
+.ResultsTable-pdf tbody tr td{
+    border-bottom: 1px solid black;
+}

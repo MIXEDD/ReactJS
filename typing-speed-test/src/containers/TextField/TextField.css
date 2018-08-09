@@ -1,0 +1,17 @@
+.TextField {
+    margin: 0 100px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .TextField {
+        margin: 0 50px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .TextField {
+        margin: 0 20px;
+    }
+
+}

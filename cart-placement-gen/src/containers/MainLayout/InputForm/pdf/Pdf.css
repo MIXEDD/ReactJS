@@ -1,0 +1,21 @@
+.Pdf {
+    max-width: 400px;
+    margin: auto;
+}
+
+.Pdf .mb5 {
+    margin-bottom: 50px;
+}
+
+.Pdf .mb5 a{
+    padding: 10px 89px;
+    border: 1px solid #ff0000;
+    box-sizing: border-box;
+    color: white;
+}
+
+.Pdf .mb5 a:hover{
+    cursor: pointer;
+    background-color: #ff0000;
+    transition: all 0.2s;
+}

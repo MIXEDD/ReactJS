@@ -1,0 +1,16 @@
+.GeneratedText {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .GeneratedText {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .GeneratedText {
+        font-size: 18px;
+    }
+}

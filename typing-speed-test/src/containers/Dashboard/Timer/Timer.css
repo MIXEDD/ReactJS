@@ -1,0 +1,22 @@
+.Timer {
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.Timer .value{
+    text-align: center;
+    font-size: 60px;
+    margin: 15px 0;
+    color: #C91F37;
+}
+
+.Timer .label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 400px) {
+    .Timer .label {
+        font-size: 12px;
+    }
+}

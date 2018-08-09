@@ -1,0 +1,13 @@
+.NavigationItem a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+.NavigationItem a:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #C91F37;
+    transition: all 0.2s;
+}
+

@@ -1,0 +1,29 @@
+.currentWord{
+    border-radius: 5px;
+    border-bottom: 2px solid #C91F37;
+}
+
+.currentWord .unchecked {
+    background-color: #C91F37;
+    color: white;
+}
+
+.currentWord .correct {
+    color: #FCC9B9;
+}
+
+.currentWord .incorrect {
+    color: #C91F37;
+}
+
+.incorrectWord {
+    color: #C91F37;
+}
+
+.correctWord {
+    color: #FCC9B9;
+}
+
+.hideWord {
+    display: none;
+}
