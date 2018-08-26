@@ -1,5 +1,12 @@
 import React from 'react';
-import './TypeInfoField.css';
+
+
+let isIE = /*@cc_on!@*/false || !!document.documentMode;
+let isEdge = !isIE && !!window.StyleMedia;
+
+
+if(isEdge)require('./TypingInfoFieldMS.css');
+else require('./TypeInfoField.css');
 
 // single component of the information displayed on the dashboard
 // INFORMATION SUCH AS: WPM/CPM/Accuracy

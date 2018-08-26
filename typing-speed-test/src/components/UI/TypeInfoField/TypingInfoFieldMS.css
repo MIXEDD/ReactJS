@@ -1,0 +1,28 @@
+.typeInfoField .value{
+    color: #C91F37;
+    font-size: 60px;
+    margin: 15px 100px;
+}
+
+.typeInfoField .label{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .typeInfoField .value {
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .typeInfoField .value {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    .typeInfoField .label {
+        font-size: 12px;
+    }
+}

@@ -9,5 +9,6 @@ export {
     stopTimer,
     updateDashboardAccuracy,
     scoreUpdate,
-    setRandomTextToNull
+    setRandomTextToNull,
+    setRunOutOfWordsToTrue
 } from './userTextInput';

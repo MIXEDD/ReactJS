@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
 import TypeInfoField from '../../../components/UI/TypeInfoField/TypeInfoField';
 import {connect} from 'react-redux';
-import './TypingInfo.css';
 import * as actions from "../../../store/actions";
+
+let isIE = /*@cc_on!@*/false || !!document.documentMode;
+let isEdge = !isIE && !!window.StyleMedia;
+
+if(isIE || isEdge)require('./TypingInfoMS.css');
+else require('./TypingInfo.css');
+
 
 class TypingInfo extends Component{
 

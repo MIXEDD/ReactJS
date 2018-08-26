@@ -88,7 +88,8 @@ export const setUpNewTest = (randomTextArray,unusedWordChars,wordCheckClasses) =
         Accuracy: 0,
         timerStarted:false,
         timerFinished:false,
-        userScoreUploaded:false
+        userScoreUploaded:false,
+        runOutOfWords: false
     };
 };
 // Action to set score update state to TRUE so that it would be clear that typing results where sent to the DB
@@ -105,6 +106,15 @@ export const setRandomTextToNull = () => {
         randomTextArray: ""
     };
 };
+
+export const setRunOutOfWordsToTrue = () => {
+    return {
+        type:actionTypes.SET_RUN_OUT_OF_WORDS,
+        runOutOfWords: true
+    };
+};
+
+
 // Async setup method to retrieve and mix new random text and set up everything for NEW TEST
 export const SetUp = () => {
     return dispatch => {
@@ -114,8 +124,8 @@ export const SetUp = () => {
                 let textArray = randomText.split(' ');
                 let tempIndexFirst,tempIndexSecond,firstValue,secondValue;
                 for(let i = 0; i < textArray.length; i++){
-                        tempIndexFirst = Math.round(Math.random() * textArray.length);
-                        tempIndexSecond = Math.round(Math.random() * textArray.length);
+                        tempIndexFirst = Math.round(Math.random() * (textArray.length - 1));
+                        tempIndexSecond = Math.round(Math.random() * (textArray.length - 1));
                         firstValue = textArray[tempIndexFirst];
                         secondValue = textArray[tempIndexSecond];
                         textArray[tempIndexFirst] = secondValue;

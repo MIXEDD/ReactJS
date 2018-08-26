@@ -1,6 +1,9 @@
 .TypingInfo {
+    display: -webkit-box;
     display: flex;
-    justify-content: space-evenly;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     margin: 0 25%;
     display: -ms-flexbox;
     -ms-flex-pack: justify;

@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 import axios from '../../axios-obj';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import _ from 'lodash';
 import './TextField.css';
 
 class TextField extends Component{
@@ -23,6 +24,7 @@ class TextField extends Component{
 
     componentWillMount () {
         this.props.SetUp();
+
     };
 
     componentWillReceiveProps(nextProps) {
@@ -47,8 +49,10 @@ class TextField extends Component{
             this.rerenderInputField("");
             this.processSpace();
         } else if(enteredInput === "Backspace") {
-            this.processBackspace();
-        } else if(charsAllowed.includes(enteredInput)){
+            this.processBackspace(e);
+        // } else if(charsAllowed.includes(enteredInput)){
+        //     this.processEnteredLetter(enteredInput);
+        } else if(_.includes(charsAllowed,enteredInput)){
             this.processEnteredLetter(enteredInput);
         } else return;
     };
@@ -103,7 +107,7 @@ class TextField extends Component{
     };
 
      //this function handles backspace clicks from the Input field
-     processBackspace = () => {
+     processBackspace = (e) => {
          let usedWordsChars = [...this.props.usedWordChars];
          let unusedWordsChars = [...this.props.unusedWordChars];
          let wordChkClasses = [...this.props.wordChkClasses];
@@ -163,6 +167,10 @@ class TextField extends Component{
     };
     //this function handles space clicks from the Input field
      processSpace = () => {
+         if(this.props.randomTextArr.length - 1 === this.props.curWordIndex){
+             this.props.setRunOutOfWordsToTrue();
+             return;
+         }
         let userTypedWord = this.props.usedWordChars;
         userTypedWord = userTypedWord.join('');
         const typedWordsArray = [...this.props.typedWords];
@@ -228,7 +236,8 @@ const mapStateToProps = state => {
         Accuracy: state.Accuracy,
         timerStarted:state.timerStarted,
         timerFinished:state.timerFinished,
-        userTypingScoreUploaded:state.userScoreUploaded
+        userTypingScoreUploaded:state.userScoreUploaded,
+        noWordsLeft:state.runOutOfWords
     };
 };
 
@@ -256,7 +265,10 @@ const mapDispatchToProps = dispatch => {
                 dispatch(actions.updateDashboardAccuracy(accuracy)),
         scoreUpdate:
             () =>
-                dispatch(actions.scoreUpdate())
+                dispatch(actions.scoreUpdate()),
+        setRunOutOfWordsToTrue:
+            () =>
+                dispatch(actions.setRunOutOfWordsToTrue())
     };
 };
 

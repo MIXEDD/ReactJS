@@ -16,7 +16,8 @@ const initialState = {
     Accuracy: 0,
     timerStarted:false,
     timerFinished:false,
-    userScoreUploaded:false
+    userScoreUploaded:false,
+    runOutOfWords:false
 };
 // sets up all the state for a new test
 export const setUpNewTest = (state,action) => {
@@ -34,7 +35,8 @@ export const setUpNewTest = (state,action) => {
         Accuracy: action.Accuracy,
         timerStarted:action.timerStarted,
         timerFinished:action.timerFinished,
-        userScoreUploaded:action.userScoreUploaded
+        userScoreUploaded:action.userScoreUploaded,
+        runOutOfWords:action.runOutOfWords
     };
     return updateObject(state,newObject);
 };
@@ -124,6 +126,13 @@ export const setRandomTextToNull = (state,action) => {
     return updateObject(state,newObject);
 };
 
+export const setRunOutOfWordsToTrue = (state,action) => {
+    const newObject = {
+        runOutOfWords: action.runOutOfWords
+    };
+    return updateObject(state,newObject);
+};
+
 //REDUX REDUCER
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -137,6 +146,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.UPDATE_DASHBOARD_ACCURACY: return  updateDashboardAccuracy(state,action);
         case actionTypes.SCORE_UPDATE: return  scoreUpdate(state,action);
         case actionTypes.SET_RANDOM_TEXT_TO_NULL: return  setRandomTextToNull(state,action);
+        case actionTypes.SET_RUN_OUT_OF_WORDS: return  setRunOutOfWordsToTrue(state,action);
         default: return state;
     }
 };

@@ -18,6 +18,10 @@ class Timer extends Component {
     };
 
     componentWillReceiveProps(nextProps) {
+        if(nextProps.noWordsLeft){
+            this.stopTimer();
+            return;
+        }
         //Initiates timer once timerStarted state change took effect
         if(nextProps.timerStarted && !nextProps.timerFinished){
             this.startTimer();
@@ -78,7 +82,8 @@ class Timer extends Component {
 const mapStateToProps = state => {
     return {
         timerStarted:state.timerStarted,
-        timerFinished:state.timerFinished
+        timerFinished:state.timerFinished,
+        noWordsLeft:state.runOutOfWords
     };
 };
 
